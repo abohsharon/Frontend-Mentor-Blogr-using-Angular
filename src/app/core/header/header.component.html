@@ -1,0 +1,77 @@
+<header class="bg-gradient-to-t from-nav-red to-nav-light-red w-full h-full max-h-[30%] rounded-b-lg py-8 px-6">
+
+ <!-- navbar  -->
+ <div>
+    <ul class="bg-white h-100vh w-[100%] max-w-[450px] fixed top-20 right-[-450px]
+    p-2 my-2 justify-center items-center text-center font-xl transition duration-[.3s] ease-out" [ngStyle]="{'right' : ScreenMenu == true ? '0' : '-450px' }">
+
+        <li class="relative "><a href="#" class="flex justify-center">
+         Product  <img src="/assets/icon-arrow-dark.svg" class="w-[10px] h-[10px]" alt="dropdown">
+            </a>
+                 <!-- <ul class="block absolute right-0 min-w-[160px] text-left rounded p-3 bg-white overflow-auto z-10 shadow shadow-[opx 8px 16px 0px]">
+                     <li class="pb-2">Overview</li>
+                     <li class="pb-2">Pricing</li>
+                     <li class="pb-2"> Marketplace</li>
+                     <li class="pb-2"> Features</li>
+                     <li> Integrations </li>
+                </ul> -->
+        </li>
+     
+        <li class="relative "><a href="#" class="flex justify-center gap-[5px]">
+            Company<img src="/assets/icon-arrow-dark.svg" class="w-[10px] h-[10px]" alt="dropdown">
+            </a>
+                <!-- <ul class=" block absolute right-0 min-w-[160px] text-left rounded p-3 bg-white overflow-auto z-10 shadow shadow-[opx 8px 16px 0px]">
+                   <li class="pb-2">About</li>
+                   <li class="pb-2">Team</li>
+                   <li class="pb-2">Blog</li>
+                   <li class="pb-2">Careers</li>
+                 </ul>  -->
+         </li>
+     
+        <li class="relative ">
+            <a href="#" class="flex justify-center gap-[5px]"> Connect <img src="/assets/icon-arrow-dark.svg" class="w-[10px] h-[10px]" alt="dropdown"></a>
+                <!-- <ul class=" block absolute right-0 min-w-[160px] text-left rounded p-3 bg-white overflow-auto z-10 shadow shadow-[opx 8px 16px 0px]">
+                    <li class="pb-2">Contact</li>
+                    <li class="pb-2">Newsletter</li>
+                    <li class="pb-2">LinkedIn</li>
+                  </ul>  -->
+        </li>
+     
+         <li><a href="#">Login</a></li>
+         <li><a href="#">Sign Up</a></li>
+
+         
+     
+     </ul>
+     
+ </div>
+
+        <!-- hamburger -->
+    <nav class="p-4">
+        <div class="flex justify-between h-[30px]">
+            <img src="/assets/logo.svg" alt="logo">
+            <img src="/assets/icon-hamburger.svg" class="w-[45px] h-[25px]" alt="open-menu" (click)="offScreenMenu()" *ngIf="ScreenMenu == false">
+            <img src="/assets/icon-close.svg" class="w-[40px] h-[30px]" alt="close-menu" (click)="onScreenMenu()" *ngIf="ScreenMenu == true">
+     <!-- <span class="h-[5px] w-[100%] bg-white rounded absolute top-[25%] left-[50%] translate-x-[-50%] translate-y-[-50%] transition duration-[.3s] ease-in"></span>
+      <span class="h-[5px] w-[100%] bg-white rounded absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] transition duration-[.3s] ease-in"></span> 
+      <span class="h-[5px] w-[100%] bg-white rounded absolute top-[75%] left-[50%] translate-x-[-50%] translate-y-[-50%] transition duration-[.3s] ease-in"></span>   -->
+        </div>
+    </nav>
+
+
+
+    <div  class="text-white text-center items-center mt-20">
+        <h1 class="text-4xl  mb-4">
+        A modern 
+       <br>publishing platform
+        </h1>
+          <p class="text-lg font-extralight mb-10"> Grow your audience and build 
+            <br> your online brand</p>
+            <div class="">
+                 <button type="button" class="text-custom-red text-center mr-2 font-bold bg-white rounded-3xl focus:outline-none px-4 py-2">Start for Free</button>
+               <button type="button" class="text-white text-center bg-transparent ml-2 border-white border-[1px] font-bold rounded-3xl px-4 py-2">Learn More</button>
+            </div>
+    </div>
+
+</header>
+
