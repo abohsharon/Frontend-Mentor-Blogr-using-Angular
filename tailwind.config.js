@@ -8,10 +8,14 @@ module.exports = {
       'Mobile': '375px',
       // => @media (min-width: 365px) { ... }
 
-      'Desktop': '1440px',
+      'Desktop': '1000px',
       // => @media (min-width: 1440px) { ... }
     },
     extend: {
+      backgroundImage: {
+        'header-pattern': "url('/assets/bg-pattern-intro-mobile.svg')",
+        'body-pattern': "url('/assets/bg-pattern-circles.svg')"
+      },
       colors: {
           'custom-red': 'hsl(356, 100%, 66%)',
         // Light red (CTA text)

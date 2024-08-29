@@ -11,6 +11,9 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
 
   ScreenMenu: boolean = false ;
+  isDropdownOpen1 = false;
+  isDropdownOpen2 = false;
+  isDropdownOpen3 = false;
 
   offScreenMenu(){
     this.ScreenMenu = true;
@@ -20,6 +23,24 @@ export class HeaderComponent {
     this.ScreenMenu = false;
   }
 
+  toggleDropdown1(){ 
+    this.isDropdownOpen1 = !this.isDropdownOpen1;
+    }
+    
   
+  
+  toggleDropdown2(){
+    this.isDropdownOpen2 = !this.isDropdownOpen2;
+    // if(!this.isDropdownOpen2){
+    //   this.isDropdownOpen1 == false;
+    //   this.isDropdownOpen3;
+    // }
+    // this.isDropdownOpen2 == this.isDropdownOpen1 && this.isDropdownOpen3;
+    
+  }
+  
+  toggleDropdown3(){
+    this.isDropdownOpen3 = !this.isDropdownOpen3;
+  }
 
 }

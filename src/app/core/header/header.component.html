@@ -1,44 +1,57 @@
-<header class="bg-gradient-to-t from-nav-red to-nav-light-red w-full h-full max-h-[30%] rounded-b-lg py-8 px-6">
+<header class="bg-gradient-to-t z-0 relative from-nav-red to-nav-light-red w-full h-full max-h-[30%] rounded-b-lg py-8 px-6 Desktop:px-28 overflow-hidden">
 
- <!-- navbar  -->
- <div>
-    <ul class="bg-white h-100vh w-[100%] max-w-[450px] fixed top-20 right-[-450px]
-    p-2 my-2 justify-center items-center text-center font-xl transition duration-[.3s] ease-out" [ngStyle]="{'right' : ScreenMenu == true ? '0' : '-450px' }">
+ <!-- Mobile Navbar Dropdown -->
+  <div class="absolute -z-10 top-0  Mobile:w-[100%] Mobile:h-[100%] Desktop:w-[100%] Desktop:absolute Desktop:mt-0">
+        <img src="/assets/bg-pattern-intro-mobile.svg" alt="into" class=" Mobile:scale-[2.5] Desktop:scale-[2]">
+  </div>
 
-        <li class="relative "><a href="#" class="flex justify-center">
+ <div class="Desktop:hidden">
+    
+    <ul class="z-10 bg-white max-h-[400px] h-[100%] w-[100%] max-w-[450px] fixed top-20 right-[-450px] p-2 my-2 justify-center items-center text-center font-xl transition duration-300 ease-out" 
+    [ngStyle]="{'right' : ScreenMenu == true ? '0' : '-450px' }">
+
+        <li class="relative  my-8"><a href="#" class="flex justify-center gap-[5px] text-2xl font-semibold hover:text-gray-600 text-center items-center" (click)="toggleDropdown1()">
          Product  <img src="/assets/icon-arrow-dark.svg" class="w-[10px] h-[10px]" alt="dropdown">
             </a>
-                 <!-- <ul class="block absolute right-0 min-w-[160px] text-left rounded p-3 bg-white overflow-auto z-10 shadow shadow-[opx 8px 16px 0px]">
+                 <ul class="block absolute right-0 min-w-[160px] text-left rounded p-3 bg-gray-200 overflow-auto z-10 shadow shadow-[opx 8px 16px 0px]" [ngClass]="isDropdownOpen1 ? 'transition ease-out duration-300 transform opacity-100 scale-100' :'transition ease-in duration-75 transform opacity-0 scale-95'">
                      <li class="pb-2">Overview</li>
                      <li class="pb-2">Pricing</li>
                      <li class="pb-2"> Marketplace</li>
                      <li class="pb-2"> Features</li>
                      <li> Integrations </li>
-                </ul> -->
+                </ul>
         </li>
      
-        <li class="relative "><a href="#" class="flex justify-center gap-[5px]">
-            Company<img src="/assets/icon-arrow-dark.svg" class="w-[10px] h-[10px]" alt="dropdown">
+        <li class="relative my-8"><a href="#" class="flex justify-center gap-[5px] text-2xl font-semibold hover:text-gray-600 items-center" (click)="toggleDropdown2()">
+            Company <img src="/assets/icon-arrow-dark.svg" class="w-[10px] h-[10px]" alt="dropdown">
             </a>
-                <!-- <ul class=" block absolute right-0 min-w-[160px] text-left rounded p-3 bg-white overflow-auto z-10 shadow shadow-[opx 8px 16px 0px]">
+                <ul class=" block absolute right-0 min-w-[160px] text-left rounded p-3 bg-gray-200 overflow-auto z-10 shadow shadow-[opx 8px 16px 0px]" [ngClass]="isDropdownOpen2 ? 'transition ease-out duration-300 transform opacity-100 scale-100' :'transition ease-in duration-75 transform opacity-0 scale-95'">
                    <li class="pb-2">About</li>
                    <li class="pb-2">Team</li>
                    <li class="pb-2">Blog</li>
                    <li class="pb-2">Careers</li>
-                 </ul>  -->
+                 </ul> 
          </li>
      
-        <li class="relative ">
-            <a href="#" class="flex justify-center gap-[5px]"> Connect <img src="/assets/icon-arrow-dark.svg" class="w-[10px] h-[10px]" alt="dropdown"></a>
-                <!-- <ul class=" block absolute right-0 min-w-[160px] text-left rounded p-3 bg-white overflow-auto z-10 shadow shadow-[opx 8px 16px 0px]">
+        <li class="relative  my-8">
+            <a href="#" class="flex justify-center gap-[5px] text-2xl font-semibold hover:text-gray-600 items-center" (click)="toggleDropdown3()"> 
+                Connect<img src="/assets/icon-arrow-dark.svg" class="w-[10px] h-[10px]" alt="dropdown"></a>
+                <ul class=" block absolute right-0 min-w-[160px] text-left rounded p-3 bg-gray-200 overflow-auto z-10 shadow shadow-[opx 8px 16px 0px]" [ngClass]="isDropdownOpen3 ? 'transition ease-out duration-300 transform opacity-100 scale-100' :'transition ease-in duration-75 transform opacity-0 scale-95'">
                     <li class="pb-2">Contact</li>
                     <li class="pb-2">Newsletter</li>
                     <li class="pb-2">LinkedIn</li>
-                  </ul>  -->
+                  </ul> 
         </li>
-     
-         <li><a href="#">Login</a></li>
-         <li><a href="#">Sign Up</a></li>
+        
+        <hr class="h-[1px] my-2 bg-gray-200 border-0 dark:bg-gray-700">
+
+        <li class="my-8">
+          <button><a href="#" class="text-2xl font-semibold hover:text-gray-600">Login</a></button>  
+        </li>
+ 
+         <li class="my-8">
+            <button><a href="#" class=" px-7 py-2 rounded-2xl text-center text-2xl font-semibold outline-none text-white bg-gradient-to-l from-nav-red to-nav-light-red hover:bg-light-red">Sign Up</a></button>
+        </li>
 
          
      
@@ -46,10 +59,11 @@
      
  </div>
 
-        <!-- hamburger -->
-    <nav class="p-4">
+
+        <!--Mobile Hamburger -->
+    <nav class="p-4 Desktop:hidden">
         <div class="flex justify-between h-[30px]">
-            <img src="/assets/logo.svg" alt="logo">
+            <img src="/assets/logo.svg" alt="logo" class="">
             <img src="/assets/icon-hamburger.svg" class="w-[45px] h-[25px]" alt="open-menu" (click)="offScreenMenu()" *ngIf="ScreenMenu == false">
             <img src="/assets/icon-close.svg" class="w-[40px] h-[30px]" alt="close-menu" (click)="onScreenMenu()" *ngIf="ScreenMenu == true">
      <!-- <span class="h-[5px] w-[100%] bg-white rounded absolute top-[25%] left-[50%] translate-x-[-50%] translate-y-[-50%] transition duration-[.3s] ease-in"></span>
@@ -60,18 +74,66 @@
 
 
 
+
+        <!-- desktop Navbar -->
+       
+        <div class="Mobile:hidden Desktop:flex Desktop:flex-col">
+       
+            <ul class="flex justify-between text-white">
+                <div class="flex gap-5">
+                    <img src="/assets/logo.svg" alt="logo" class="mr-10"> 
+               
+                <li class=""><a href="#" class="flex gap-1 items-center"><span class="hover:border-b-[2.5px] border-b-white">Product</span> <img src="/assets/icon-arrow-light.svg" alt="dropdpwn" class="h-[10px] w-[10px]" (click)="toggleDropdown1()"></a>
+                    <ul class="block text-black absolute min-w-[160px] text-left rounded p-3 bg-white overflow-auto z-10 shadow shadow-[opx 8px 16px 0px]" [ngClass]="isDropdownOpen1 ? 'transition ease-out duration-300 transform opacity-100 scale-100' :'transition ease-in duration-75 transform opacity-0 scale-95'">
+                        <li>Overview</li>
+                        <li>Pricing</li>
+                        <li>Marketplace</li>
+                        <li>Features</li>
+                        <li>Integrations</li>
+                    </ul> 
+                </li>
+    
+                <li><a href="#" class="flex gap-1 items-center"><span class="hover:border-b-[3px]  border-b-white">Company</span> <img src="/assets/icon-arrow-light.svg" alt="dropdpwn" class="h-[10px] w-[10px]" (click)="toggleDropdown2()"></a>
+                    <ul class="block text-black absolute min-w-[160px] text-left rounded p-3 bg-white overflow-auto z-10 shadow shadow-[opx 8px 16px 0px]" [ngClass]="isDropdownOpen2 ? 'transition ease-out duration-300 transform opacity-100 scale-100' :'transition ease-in duration-75 transform opacity-0 scale-95'">
+                        <li>About</li>
+                        <li>Team</li>
+                        <li>Blog</li>
+                        <li>Careers</li>
+                    </ul> 
+                </li>
+    
+                <li><a href="#" class="flex gap-1 items-center"><span class="hover:border-b-[3px]  border-b-white">Connect</span>  <img src="/assets/icon-arrow-light.svg" alt="dropdpwn" class="h-[10px] w-[10px]" (click)="toggleDropdown3()"></a>
+                    <ul class="block text-black absolute min-w-[160px] text-left rounded p-3 bg-white overflow-auto z-10 shadow shadow-[opx 8px 16px 0px]" [ngClass]="isDropdownOpen3 ? 'transition ease-out duration-300 transform opacity-100 scale-100' :'transition ease-in duration-75 transform opacity-0 scale-95'">
+                        <li>Contact</li>
+                        <li>Newsletter</li>
+                        <li>LinkedIn</li>
+                    </ul> 
+                </li>
+            </div>
+                <div class="flex justify-end gap-3 ">
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#" class="text-custom-red text-center mr-2 outline-none font-bold bg-white rounded-3xl focus:outline-none px-4 py-2 hover:bg-light-red hover:text-white">Sign Up</a></li>
+                </div>
+            </ul>
+           
+         </div>
+    
+         
+            <!-- Hero Text -->
     <div  class="text-white text-center items-center mt-20">
-        <h1 class="text-4xl  mb-4">
+        <h1 class="Mobile:text-4xl Mobile:mb-4 Desktop:text-7xl">
         A modern 
-       <br>publishing platform
+       <br class="Desktop:hidden">publishing platform
         </h1>
           <p class="text-lg font-extralight mb-10"> Grow your audience and build 
-            <br> your online brand</p>
+            <br class="Desktop:hidden"> your online brand</p>
             <div class="">
-                 <button type="button" class="text-custom-red text-center mr-2 font-bold bg-white rounded-3xl focus:outline-none px-4 py-2">Start for Free</button>
-               <button type="button" class="text-white text-center bg-transparent ml-2 border-white border-[1px] font-bold rounded-3xl px-4 py-2">Learn More</button>
+                 <button type="button" class="text-custom-red text-center mr-2 font-bold bg-white rounded-3xl focus:outline-none px-4 py-2 hover:bg-light-red hover:text-white">Start for Free</button>
+               <button type="button" class="text-white text-center bg-transparent ml-2 border-white border-[1px] font-bold rounded-3xl px-4 py-2 hover:bg-white hover:text-custom-red">Learn More</button>
             </div>
     </div>
+
+        
 
 </header>
 
