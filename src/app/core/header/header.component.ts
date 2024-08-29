@@ -23,20 +23,20 @@ export class HeaderComponent {
     this.ScreenMenu = false;
   }
 
-  toggleDropdown1(){ 
+  toggleDropdown1(event: any){ 
+    event.stopPropagation();
     this.isDropdownOpen1 = !this.isDropdownOpen1;
+
     }
     
-  
-  
   toggleDropdown2(){
     this.isDropdownOpen2 = !this.isDropdownOpen2;
+
     // if(!this.isDropdownOpen2){
     //   this.isDropdownOpen1 == false;
     //   this.isDropdownOpen3;
     // }
     // this.isDropdownOpen2 == this.isDropdownOpen1 && this.isDropdownOpen3;
-    
   }
   
   toggleDropdown3(){
