@@ -6,30 +6,28 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [NgClass, NgStyle, NgIf],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-
-  ScreenMenu: boolean = false ;
+  ScreenMenu: boolean = false;
   isDropdownOpen1 = false;
   isDropdownOpen2 = false;
   isDropdownOpen3 = false;
 
-  offScreenMenu(){
+  offScreenMenu() {
     this.ScreenMenu = true;
   }
 
-  onScreenMenu(){
+  onScreenMenu() {
     this.ScreenMenu = false;
   }
 
-  toggleDropdown1(event: any){ 
+  toggleDropdown1(event: any) {
     event.stopPropagation();
     this.isDropdownOpen1 = !this.isDropdownOpen1;
+  }
 
-    }
-    
-  toggleDropdown2(){
+  toggleDropdown2() {
     this.isDropdownOpen2 = !this.isDropdownOpen2;
 
     // if(!this.isDropdownOpen2){
@@ -38,9 +36,8 @@ export class HeaderComponent {
     // }
     // this.isDropdownOpen2 == this.isDropdownOpen1 && this.isDropdownOpen3;
   }
-  
-  toggleDropdown3(){
+
+  toggleDropdown3() {
     this.isDropdownOpen3 = !this.isDropdownOpen3;
   }
-
 }
